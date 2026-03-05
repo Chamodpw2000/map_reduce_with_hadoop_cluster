@@ -199,7 +199,15 @@ class HadoopJobRunner:
                     
                     print("=" * 70)
                     print(f"Total weather conditions analyzed: {len(results)}")
-                    print(f"Results saved in: {result_file}")
+                    
+                    # Save results as a clean CSV file
+                    output_csv = os.path.join(self.local_output_dir, "weather_analysis_results.csv")
+                    with open(output_csv, 'w') as csv_out:
+                        csv_out.write("Weather_Condition,Total_Accidents,Average_Severity\n")
+                        for weather, count, avg_severity in results:
+                            csv_out.write(f"{weather},{count},{avg_severity:.2f}\n")
+                    
+                    print(f"✓ Results saved to: {output_csv}")
                     
                 return True
             else:

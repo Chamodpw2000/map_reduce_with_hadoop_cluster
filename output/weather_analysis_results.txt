@@ -1,0 +1,105 @@
+Blowing Dust	10	2.20
+Blowing Dust / Windy	18	2.22
+Blowing Snow	44	2.18
+Blowing Snow / Windy	60	2.07
+Clear	52639	2.37
+Cloudy	52914	2.16
+Cloudy / Windy	1104	2.14
+Drifting Snow / Windy	1	2.00
+Drizzle	312	2.29
+Drizzle / Windy	4	2.00
+Drizzle and Fog	19	2.21
+Fair	165430	2.13
+Fair / Windy	2229	2.13
+Fog	6486	2.14
+Fog / Windy	43	2.14
+Freezing Drizzle	2	2.00
+Freezing Rain	9	2.22
+Freezing Rain / Windy	1	2.00
+Funnel Cloud	2	2.00
+Hail	1	2.00
+Haze	4990	2.22
+Haze / Windy	101	2.13
+Heavy Drizzle	26	2.42
+Heavy Freezing Drizzle	1	2.00
+Heavy Rain	2099	2.25
+Heavy Rain / Windy	100	2.18
+Heavy Sleet	2	2.00
+Heavy Snow	310	2.22
+Heavy Snow / Windy	58	2.26
+Heavy T-Storm	600	2.17
+Heavy T-Storm / Windy	72	2.14
+Heavy Thunderstorms and Rain	160	2.45
+Ice Pellets	8	2.25
+Light Drizzle	1502	2.26
+Light Drizzle / Windy	16	2.38
+Light Freezing Drizzle	77	2.25
+Light Freezing Fog	62	2.44
+Light Freezing Rain	205	2.36
+Light Freezing Rain / Windy	8	2.12
+Light Ice Pellets	17	2.47
+Light Rain	22721	2.25
+Light Rain / Windy	495	2.18
+Light Rain Shower	18	2.33
+Light Rain Showers	7	2.43
+Light Rain with Thunder	886	2.22
+Light Sleet	16	2.19
+Light Sleet / Windy	1	2.00
+Light Snow	8335	2.25
+Light Snow / Windy	443	2.11
+Light Snow Grains	1	3.00
+Light Snow Shower	5	2.00
+Light Snow Showers	2	2.50
+Light Snow and Sleet	12	2.25
+Light Snow and Sleet / Windy	3	2.00
+Light Snow with Thunder	3	2.00
+Light Thunderstorms and Rain	328	2.44
+Light Thunderstorms and Snow	1	2.00
+Mist	236	2.27
+Mostly Cloudy	65553	2.22
+Mostly Cloudy / Windy	1015	2.17
+N/A Precipitation	201	2.11
+Overcast	24651	2.39
+Partial Fog	1	3.00
+Partly Cloudy	45604	2.22
+Partly Cloudy / Windy	709	2.18
+Patches of Fog	246	2.17
+Patches of Fog / Windy	1	4.00
+Rain	5411	2.25
+Rain / Windy	158	2.17
+Rain Shower	3	2.67
+Rain Showers	7	2.29
+Rain and Sleet	1	3.00
+Sand	2	2.00
+Sand / Dust Whirls Nearby	1	2.00
+Sand / Dust Whirlwinds	2	2.00
+Scattered Clouds	13362	2.37
+Shallow Fog	213	2.18
+Shallow Fog / Windy	1	2.00
+Showers in the Vicinity	93	2.24
+Sleet	14	2.14
+Sleet / Windy	1	2.00
+Small Hail	2	2.50
+Smoke	801	2.23
+Smoke / Windy	3	2.00
+Snow	977	2.27
+Snow / Windy	98	2.05
+Snow and Sleet	24	2.38
+Snow and Sleet / Windy	3	2.33
+Snow and Thunder	2	2.00
+Squalls	1	2.00
+Squalls / Windy	3	2.33
+T-Storm	1037	2.21
+T-Storm / Windy	62	2.19
+Thunder	927	2.16
+Thunder / Windy	34	2.09
+Thunder / Wintry Mix	2	2.50
+Thunder in the Vicinity	1127	2.17
+Thunderstorm	280	2.40
+Thunderstorms and Rain	141	2.40
+Thunderstorms and Snow	1	3.00
+Tornado	2	1.50
+Volcanic Ash	1	2.00
+Widespread Dust	11	2.27
+Wintry Mix	790	2.18
+Wintry Mix / Windy	24	2.21

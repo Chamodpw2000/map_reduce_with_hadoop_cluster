@@ -12,7 +12,14 @@ For each Weather_Condition, we need to compute:
 
 import sys
 import csv
+import os
 from io import StringIO
+
+# Force UTF-8 encoding for stdin/stdout (Python 3.4 on Debian defaults to ASCII)
+if sys.version_info < (3, 7):
+    import codecs
+    sys.stdin = codecs.getreader('utf-8')(sys.stdin.buffer, errors='replace')
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
 
 def mapper():
     """
@@ -54,7 +61,7 @@ def mapper():
                     severity_num = float(severity)
                     if severity_num > 0:  # Valid severity
                         # Emit: weather_condition\tseverity
-                        print(f"{weather_condition}\t{severity_num}")
+                        print("{}\t{}".format(weather_condition, severity_num))
                 except ValueError:
                     # Skip rows with invalid severity
                     continue

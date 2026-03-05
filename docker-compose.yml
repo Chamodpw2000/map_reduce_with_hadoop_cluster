@@ -1,8 +1,8 @@
-version: '3.8'
-
 services:
   hadoop-master:
-    image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    build:
+      context: .
+      dockerfile: Dockerfile.namenode
     container_name: hadoop-namenode
     ports:
       - "9870:50070"  # NameNode Web UI
@@ -19,11 +19,6 @@ services:
       - CORE_CONF_hadoop_proxyuser_hue_groups=*
       - HDFS_CONF_dfs_webhdfs_enabled=true
       - HDFS_CONF_dfs_permissions_enabled=false
-    command: >
-      bash -c "
-      apt-get update && apt-get install -y python3 python3-pip
-      /entrypoint.sh /run.sh
-      "
 
   hadoop-datanode:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8

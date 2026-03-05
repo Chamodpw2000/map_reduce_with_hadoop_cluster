@@ -12,6 +12,12 @@ For each Weather_Condition, computes:
 
 import sys
 
+# Force UTF-8 encoding for stdin/stdout (Python 3.4 on Debian defaults to ASCII)
+if sys.version_info < (3, 7):
+    import codecs
+    sys.stdin = codecs.getreader('utf-8')(sys.stdin.buffer, errors='replace')
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
+
 def reducer():
     """
     Reads sorted mapper output and calculates statistics for each weather condition
@@ -35,7 +41,7 @@ def reducer():
             if current_weather and current_weather != weather_condition:
                 if current_count > 0:
                     avg_severity = current_severity_sum / current_count
-                    print(f"{current_weather}\t{current_count}\t{avg_severity:.2f}")
+                    print("{}\t{}\t{:.2f}".format(current_weather, current_count, avg_severity))
                 
                 # Reset for new weather condition
                 current_weather = weather_condition
@@ -60,7 +66,7 @@ def reducer():
     # Output the last weather condition
     if current_weather and current_count > 0:
         avg_severity = current_severity_sum / current_count
-        print(f"{current_weather}\t{current_count}\t{avg_severity:.2f}")
+        print("{}\t{}\t{:.2f}".format(current_weather, current_count, avg_severity))
 
 if __name__ == "__main__":
     reducer()
