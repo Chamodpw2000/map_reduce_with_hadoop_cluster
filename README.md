@@ -20,6 +20,7 @@ For each **Weather_Condition**, compute:
 * **Docker Desktop (optional)** OR **WSL2/Linux + Java 11**
 * Python 3.x
 * Dataset: ~500,000 rows with `Weather_Condition` and `Severity` columns
+* dataser link : https://www.kaggle.com/datasets/yuvrajdhepe/us-accidents-processed?resource=download
 
 ---
 
