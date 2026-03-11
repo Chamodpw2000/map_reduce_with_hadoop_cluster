@@ -91,18 +91,6 @@ Update `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` to point to Java 11:
 ```bash
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
-
-Yes — good catch 👍.
-For a **proper manual Hadoop setup**, you should include the **SSH configuration**, because Hadoop uses **SSH to start daemons (NameNode, DataNode, etc.) even in pseudo-distributed mode**. Without passwordless SSH, `start-dfs.sh` and `start-yarn.sh` may fail.
-
-Your current **Option 2** is mostly correct, but it should include an **SSH setup step before formatting HDFS**.
-
-Below is the **correct section you should insert in Option 2**.
-
----
-
-## Add This Step in Option 2 (after Hadoop configuration)
-
 ### 3. Configure SSH for Hadoop
 
 Hadoop requires **passwordless SSH access to localhost** to start its distributed services.
