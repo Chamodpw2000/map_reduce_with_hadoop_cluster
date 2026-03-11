@@ -13,7 +13,7 @@ For each **Weather_Condition**, compute:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
