@@ -92,21 +92,87 @@ Update `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` to point to Java 11:
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
 
-#### 3. Format HDFS
+Yes — good catch 👍.
+For a **proper manual Hadoop setup**, you should include the **SSH configuration**, because Hadoop uses **SSH to start daemons (NameNode, DataNode, etc.) even in pseudo-distributed mode**. Without passwordless SSH, `start-dfs.sh` and `start-yarn.sh` may fail.
+
+Your current **Option 2** is mostly correct, but it should include an **SSH setup step before formatting HDFS**.
+
+Below is the **correct section you should insert in Option 2**.
+
+---
+
+## Add This Step in Option 2 (after Hadoop configuration)
+
+### 3. Configure SSH for Hadoop
+
+Hadoop requires **passwordless SSH access to localhost** to start its distributed services.
+
+1. Install SSH server
+
+```bash
+sudo apt install openssh-server -y
+```
+
+2. Start SSH service
+
+```bash
+sudo service ssh start
+```
+
+3. Generate SSH key
+
+```bash
+ssh-keygen -t rsa -P ""
+```
+
+Press **Enter** for all prompts.
+
+4. Enable passwordless SSH
+
+```bash
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+
+5. Test SSH connection
+
+```bash
+ssh localhost
+```
+
+If configured correctly, it should **log in without asking for a password**.
+
+---
+
+## Then Continue With Existing Steps
+
+After SSH setup, continue with:
+
+### 4. Format HDFS
 
 ```bash
 hdfs namenode -format
 ```
 
-#### 4. Start Hadoop Services
+### 5. Start Hadoop Services
 
 ```bash
 start-dfs.sh
 start-yarn.sh
-jps   # Verify NameNode, DataNode, ResourceManager, NodeManager
+jps
 ```
 
-#### 5. Prepare HDFS and Upload Data
+Expected output:
+
+```
+NameNode
+DataNode
+ResourceManager
+NodeManager
+```
+
+
+#### 6. Prepare HDFS and Upload Data
 
 ```bash
 hdfs dfs -mkdir -p /user/$USER/input
@@ -114,7 +180,7 @@ hdfs dfs -put data.csv /user/$USER/input/
 hdfs dfs -ls /user/$USER/input
 ```
 
-#### 6. Run MapReduce Job
+#### 7. Run MapReduce Job
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
@@ -126,7 +192,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
 hdfs dfs -cat /user/$USER/output/part-00000
 ```
 
-#### 7. Verify and Interpret Results
+#### 8. Verify and Interpret Results
 
 * Confirm counts and average severity per weather condition
 * Monitor progress via:
@@ -134,7 +200,7 @@ hdfs dfs -cat /user/$USER/output/part-00000
   * **HDFS NameNode**: [http://localhost:9870](http://localhost:9870)
   * **YARN ResourceManager**: [http://localhost:8088](http://localhost:8088)
 
-#### 8. Cleanup
+#### 9. Cleanup
 
 ```bash
 hdfs dfs -rm -r /user/$USER/input
