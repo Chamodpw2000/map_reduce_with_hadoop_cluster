@@ -298,7 +298,11 @@ rm -rf output/           # Remove local output
 * **Memory Usage**: 2-4GB recommended
 
 ---
+## Execution Evidence
 
+Screenshots and screen recording of the Hadoop setup and MapReduce execution can be found in the `evidence/` folder.
+
+---
 ## 📚 Learning Objectives
 
 This project demonstrates:
