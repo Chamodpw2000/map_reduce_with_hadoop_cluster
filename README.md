@@ -298,6 +298,13 @@ rm -rf output/           # Remove local output
 * **Memory Usage**: 2-4GB recommended
 
 ---
+## 📈 Result Interpretation
+
+From the MapReduce analysis, we observed that most accidents occur during normal weather conditions such as Fair, Clear, Mostly Cloudy, and Cloudy. This is likely because most driving happens under these conditions, which increases the number of accidents recorded. However, when looking at the average severity values, some adverse weather conditions such as Thunderstorms, Heavy Rain, Snow, and Ice-related conditions show slightly higher severity levels. This suggests that accidents during bad weather may be more dangerous even though they happen less frequently.
+In terms of performance, the MapReduce job successfully processed more than 500,000 records and produced the aggregated results efficiently. Hadoop handled both common and rare weather categories correctly without errors. As future improvements, the model could be expanded by grouping similar weather conditions together to simplify analysis. Additional factors such as time of day, accident location, or traffic density could also be included to gain deeper insights. Using data from multiple years may also help identify seasonal patterns in accidents.
+
+---
+
 ## Execution Evidence
 
 Screenshots and screen recording of the Hadoop setup and MapReduce execution can be found in the `evidence/` folder.
